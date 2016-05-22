@@ -47,6 +47,8 @@ cp -r $PLUGINS/* ./usr/lib/qt5/plugins/
 
 # Tcl/Tk, Tkinter (for Calendar script)
 cp /usr/li*/python2.7/lib-dynload/_tkinter.so usr/ # It is indeed picked up here because we cd there at runtime
+mkdir -p usr/lib/python2.7/
+cp -r /usr/lib/python2.7/lib-tk usr/lib/python2.7/
 ldd usr/_tkinter.so | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
 cp -r /usr/lib/tcltk usr/lib/
 cp -r /usr/share/tcltk usr/share/

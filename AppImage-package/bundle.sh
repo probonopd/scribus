@@ -20,6 +20,8 @@ cd $HOME/$APP/
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
+sudo apt-get install python-tk
+
 cd $APP.AppDir
 
 ########################################################################

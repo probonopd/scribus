@@ -11,6 +11,8 @@ export ARCH=$(arch)
 APP=Scribus
 LOWERAPP=${APP,,}
 
+sudo apt-get install python-tk
+
 GIT_REV=$(git rev-parse --short HEAD)
 echo $GIT_REV
 make install DESTDIR=/home/travis/$APP/$APP.AppDir
@@ -19,8 +21,6 @@ cd $HOME/$APP/
 
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
-
-sudo apt-get install python-tk
 
 cd $APP.AppDir
 
